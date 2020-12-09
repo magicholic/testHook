@@ -9,7 +9,7 @@ def merge_ws?
   msg.include? "'ws'"
 end
 
-if merge?
+if merge? && merge_ws?
   puts "STOP THE MERGE!"
   puts "Never merge from WS branch! Thanks"
   exit 1
