@@ -19,9 +19,9 @@ end
 merge_msg
 $result = from_ws
 
-if merge? && $result
+if merge? #&& $result
   puts "STOP THE MERGE!"
-  puts "Merge from - #$from_branch"
+  puts $msg
   puts "Never merge from WS branch! Thanks"
   exit 1
 end
