@@ -8,12 +8,16 @@ end
 
 def merge_msg
   $msg ||= `cat .git/MERGE_MSG`
-  $from_branch = $msg[14..15]
+  $from_branch = $msg[13..16]
 end
 
 merge_msg
 
-if merge? #&& from_ws
+def from_ws
+	$from_branch == '\'ws\''
+end
+
+if merge? && from_ws
   puts "STOP THE MERGE!"
   puts "Merge from - #$from_branch"
   puts "Never merge from WS branch! Thanks"
