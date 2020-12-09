@@ -15,7 +15,7 @@ def from_ws
 end
 
 
-if merge? #&& from_ws
+if merge? && from_ws
   puts "STOP THE MERGE!"
   puts "Never merge from WS branch! Thanks"
   exit 1
