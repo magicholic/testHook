@@ -21,6 +21,7 @@ $result = from_ws
 
 if merge?
   puts "STOP THE MERGE!"
+  puts "#$msg"
   puts "Never merge from WS branch! Thanks"
   exit 1
 end
