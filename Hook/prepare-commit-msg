@@ -19,7 +19,7 @@ merge_msg
 
 if merge? && from_ws?
   puts "STOP THE MERGE!"
-  puts $msg
+  puts "#$msg"
   puts "Never merge from WS branch! Thanks"
   exit 1
 end
