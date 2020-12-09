@@ -1,15 +1,15 @@
 #!/usr/bin/env ruby
 
-def merge?
+def merge
 	ARGV[1] == "merge"
 end
 
-def merge_ws?
+def merge_ws
   msg ||= `cat .git/MERGE_MSG`
   msg.include? "'ws'"
 end
 
-if merge? && merge_ws?
+if merge && merge_ws
   puts "STOP THE MERGE!"
   puts "Never merge from WS branch! Thanks"
   exit 1
