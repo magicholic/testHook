@@ -8,7 +8,7 @@ def merge_ws?
   ARGV[2] == "ws"
 end
 
-if merge_ws?
+if merge?
   puts "STOP THE MERGE!"
   puts "Never merge from WS branch! Thanks"
   exit 1
