@@ -8,13 +8,13 @@ def merge_msg
   @msg ||= `cat .git/MERGE_MSG`
 end
 
-def from_ws
-	from_branch = merge_msg.match(/Merge branch '(.*?)'/)[1]
-	from_branch == 'ws'
-end
+#def from_ws
+#	from_branch = merge_msg.match(/Merge branch '(.*?)'/)[1]
+#	from_branch == 'ws'
+#end
 
 
-if merge? && from_ws
+if merge? #&& from_ws
   puts "STOP THE MERGE!"
   puts "Never merge from WS branch! Thanks"
   exit 1
