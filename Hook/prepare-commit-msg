@@ -11,6 +11,7 @@ def merge_msg
   $from_branch = $msg[14..15]
 end
 
+merge_msg
 
 if merge? #&& from_ws
   puts "STOP THE MERGE!"
