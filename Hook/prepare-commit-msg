@@ -1,20 +1,17 @@
 #!/usr/bin/env ruby
 $from_branch
 $msg
-$branch
 
 def merge?
 	ARGV[1] == "merge"
 end
 
-def merge_msg
+def merge_msg?
   $msg ||= `cat .git/MERGE_MSG`
-  $msg[13..16]
+  $msg[14..15] == 'ws'
 end
 
-$branch = merge_msg
-
-if merge?
+if merge? && merge_msg?
   puts "STOP THE MERGE!"
   puts "#$msg"
   puts "Never merge from WS branch! Thanks"
