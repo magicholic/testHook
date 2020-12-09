@@ -11,7 +11,7 @@ def merge_msg?
   $msg[13..16] == '\'ws\''
 end
 
-if merge?
+if merge? && merge_msg?
   puts "STOP THE MERGE!"
   puts "#$msg"
   puts "Never merge from WS branch! Thanks"
