@@ -5,10 +5,11 @@ def merge?
 end
 
 def merge_ws?
-  ARGV[2] == "ws"
+  msg ||= `cat .git/MERGE_MSG`
+  msg.include? "'ws'"
 end
 
-if merge_ws?
+if merge? && merge_ws?
   puts "STOP THE MERGE!"
   puts "Never merge from WS branch! Thanks"
   exit 1
