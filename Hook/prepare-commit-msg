@@ -4,12 +4,13 @@ def merge?
 	ARGV[1] == "merge"
 end
 
-def merge_ws?
-  ARGV[2] == "ws"
+def merge_ws
+  ARGV[2]
 end
 
-if merge_ws?
+if merge?
   puts "STOP THE MERGE!"
+  puts merge_ws
   puts "Never merge from WS branch! Thanks"
   exit 1
 end
