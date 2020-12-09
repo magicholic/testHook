@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 $from_branch
 $msg
-$result
 
 def merge?
 	ARGV[1] == "merge"
@@ -17,9 +16,8 @@ def from_ws
 end
 
 merge_msg
-$result = from_ws
 
-if merge?
+if merge? && from_ws?
   puts "STOP THE MERGE!"
   puts "#$msg"
   puts "Never merge from WS branch! Thanks"
