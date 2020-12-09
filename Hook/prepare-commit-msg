@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+$from_branch
 
 def merge?
 	ARGV[1] == "merge"
@@ -17,7 +18,7 @@ end
 
 if merge? #&& from_ws
   puts "STOP THE MERGE!"
-  puts from_branch
+  puts "Merge from - #$from_branch"
   puts "Never merge from WS branch! Thanks"
   exit 1
 end
